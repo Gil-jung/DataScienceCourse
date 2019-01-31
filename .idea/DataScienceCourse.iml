@@ -3,8 +3,12 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Database/practice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Python1/functions" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Database/practice" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Database/project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Python1/classes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Python1/practice" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Database/project/functions" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
