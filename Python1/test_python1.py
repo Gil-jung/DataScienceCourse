@@ -4,7 +4,7 @@ from sort import *
 if __name__ == "__main__":
 
     print("##### fib: Fibonacci Numbers #######")
-    print(fib(6))
+    print(fib(10))
     print()
 
     print("##### Selection Sort #######")
