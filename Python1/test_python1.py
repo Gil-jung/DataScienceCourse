@@ -1,5 +1,7 @@
 from sequence import *
 from sort import *
+from search import *
+from BinarySearchTree import *
 
 if __name__ == "__main__":
 
@@ -25,4 +27,20 @@ if __name__ == "__main__":
 
     print("##### Quick Sort #######")            # enumerate 를 쓰면 값이 왜 return 안되는지...
     print(quickSort([7, 42, 6, 3, 15, 12]))
+    print()
+
+    print("##### Binary Search #######")
+    print(bsearch([12, 25, 32, 37, 41, 48, 58, 60, 66, 73, 74, 79, 83, 91, 95], 73))
+    print()
+
+    print("##### Binary Search Tree #######")
+    array = [40, 4, 34, 45, 14, 55, 48, 13, 15, 49, 47]
+    bst = BinarySearchTree()
+    for x in array:
+        bst.insert(x)
+    print(bst.find(15))
+    print(bst.find(17))
+    print(bst.delete(55))
+    print(bst.delete(14))
+    print(bst.delete(11))
     print()
