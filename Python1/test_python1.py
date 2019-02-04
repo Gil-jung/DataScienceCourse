@@ -40,7 +40,39 @@ if __name__ == "__main__":
         bst.insert(x)
     print(bst.find(15))
     print(bst.find(17))
+
+    # depth first
+    bst.pre_order_traversal()
+    bst.in_order_traversal()
+    bst.post_order_traversal()
+    # breath first
+    bst.level_order_traversal()
+
     print(bst.delete(55))
+
+    # depth first
+    bst.pre_order_traversal()
+    bst.in_order_traversal()
+    bst.post_order_traversal()
+    # breath first
+    bst.level_order_traversal()
+
     print(bst.delete(14))
+
+    # depth first
+    bst.pre_order_traversal()
+    bst.in_order_traversal()
+    bst.post_order_traversal()
+    # breath first
+    bst.level_order_traversal()
+
     print(bst.delete(11))
+
+    # depth first
+    bst.pre_order_traversal()
+    bst.in_order_traversal()
+    bst.post_order_traversal()
+    # breath first
+    bst.level_order_traversal()
+
     print()
