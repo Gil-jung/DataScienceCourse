@@ -2,6 +2,7 @@ from sequence import *
 from sort import *
 from search import *
 from BinarySearchTree import *
+from DataStructure import *
 
 if __name__ == "__main__":
 
@@ -75,4 +76,13 @@ if __name__ == "__main__":
     # breath first
     bst.level_order_traversal()
 
+    print()
+
+    print("##### Linked List #######")
+    node1 = Node("car")
+    node2 = Node("bus")
+    node3 = Node("lorry")
+    node1.next = node2
+    node2.next = node3
+    print_list(node1)
     print()
