@@ -34,9 +34,9 @@ if __name__ == "__main__":
     print(bsearch([12, 25, 32, 37, 41, 48, 58, 60, 66, 73, 74, 79, 83, 91, 95], 73))
     print()
 
-    print("##### Binary Search Tree #######")
+    print("##### Binary Search Tree Simple #######")
     array = [40, 4, 34, 45, 14, 55, 48, 13, 15, 49, 47]
-    bst = BinarySearchTree()
+    bst = BinarySearchTreeSimple()
     for x in array:
         bst.insert(x)
     print(bst.find(15))
@@ -86,3 +86,40 @@ if __name__ == "__main__":
     node2.next = node3
     print_list(node1)
     print()
+
+    print("##### Stack #######")
+    myStack = Stack()
+    myStack.push("john")
+    myStack.push("kim")
+    print(myStack.peek())
+    print(myStack.pop())
+    print(myStack.items)
+    print()
+
+    print("##### Queue #######")
+    myQueue = Queue()
+    myQueue.add("Bob")
+    myQueue.add("Brodie")
+    myQueue.add("Carrie")
+    myQueue.add("Tanya")
+    print(myQueue.size())
+    print(myQueue.report())
+    print(myQueue.delete())
+    print(myQueue.report())
+
+    print("##### Binary Search Tree #######")
+    bst = BinarySearchTree()
+    input_data = [17, 5, 25, 2, 11, 29, 38, 9, 16, 7, 8]
+    for i in input_data:
+        bst.put(i, i)
+    bst.root.inorder_traverse()
+    #
+    print('remove 5')
+    bst.delete(5)
+    bst.root.inorder_traverse()
+    #
+    print('put 39')
+    bst.put(39, 39)
+    bst.root.inorder_traverse()
+    print()
+
