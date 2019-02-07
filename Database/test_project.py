@@ -22,29 +22,29 @@ if __name__ == "__main__":
     while option != 12:
         option = int(input("Select your action: "))
         if option == 1:
-            f1()
+             f1()
         elif option == 2:
-            f2()
+             f2()
         elif option == 3:
-            f3()
+             f3()
         elif option == 4:
-            f4()
+             f4()
         elif option == 5:
-            f5()
+             f5()
         elif option == 6:
-            f6()
+             f6()
         elif option == 7:
-            f7()
+             f7()
         elif option == 8:
-            f8()
+             f8()
         elif option == 9:
-            f9()
+             f9()
         elif option == 10:
-            f10()
+             f10()
         elif option == 11:
-            f11()
+             f11()
         elif option == 13:
-            f13()
+             f13()
 
     print("Bye!")
 

@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Python1/classes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Python1/practice" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Database/project/functions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinearAlgebra/functions" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
