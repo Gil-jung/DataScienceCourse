@@ -218,3 +218,146 @@ def f7():
     #     print()
     finally:
         connection.close()
+
+
+def f8():
+    ### print all students who applied for a university ###
+    connection = pymysql.connect(
+        host='ds4.snu.ac.kr',
+        user='ds3_27',
+        passwd='victory7&',
+        db='ds3_27_project',
+        charset='utf8',
+        cursorclass=pymysql.cursors.DictCursor)
+
+    u_id = int(input("University ID: "))
+
+    try:
+        with connection.cursor() as cursor:
+            sql = ("SELECT * "
+                   "FROM student natural join apply "
+                   "WHERE u_id = %s "
+                   "ORDER BY s_id ")
+            cursor.execute(sql, u_id)
+            # connection.commit()
+            result = cursor.fetchall()
+            df = pd.DataFrame(result)
+            print(df)
+            print()
+    except ValueError:
+        print("There is no university apply records. Please insert apply record by press 7")
+        print()
+    finally:
+        connection.close()
+    print()
+
+
+def f9():
+    ### print all universities a student applied for ###
+    connection = pymysql.connect(
+        host='ds4.snu.ac.kr',
+        user='ds3_27',
+        passwd='victory7&',
+        db='ds3_27_project',
+        charset='utf8',
+        cursorclass=pymysql.cursors.DictCursor)
+
+    s_id = int(input("Student ID: "))
+
+    try:
+        with connection.cursor() as cursor:
+            sql = ("SELECT university.*, count(apply.u_id) as applied "
+                   "FROM university natural join apply "
+                   "WHERE s_id = %s "
+                   "GROUP BY university.u_id, university.u_name, university.capacity, university.u_group, university.cutline, university.weight "
+                   "ORDER BY university.u_id ")
+            cursor.execute(sql, s_id)
+            # connection.commit()
+            result = cursor.fetchall()
+            df = pd.DataFrame(result)
+            print(df)
+            print()
+    except ValueError:
+        print("There is no student apply records. Please insert apply record by press 7")
+        print()
+    finally:
+        connection.close()
+    print()
+
+
+def f10():
+    ### print expected successful applicants of a university ###
+    connection = pymysql.connect(
+        host='ds4.snu.ac.kr',
+        user='ds3_27',
+        passwd='victory7&',
+        db='ds3_27_project',
+        charset='utf8',
+        cursorclass=pymysql.cursors.DictCursor)
+
+    u_id = int(input("University ID: "))
+
+    try:
+        with connection.cursor() as cursor:
+            sql = ("SELECT a.s_id, a.s_name, a.school_score, a.csat_score "
+                   "FROM ( "
+                   "	SELECT *, @curRank := @curRank + 1 as rank "
+                   "	FROM university natural join apply "
+                   "					natural join student, "
+                   "		(SELECT @curRank := 0) r "
+                   "	WHERE "
+                   "		apply.u_id = %s and "
+                   "		cutline <= csat_score + (school_score * weight) "
+                   "	ORDER BY csat_score + (school_score * weight) desc ) a "
+                   "WHERE rank <= capacity ")
+            cursor.execute(sql, u_id)
+            # connection.commit()
+            result = cursor.fetchall()
+            df = pd.DataFrame(result)
+            print(df)
+            print()
+    except ValueError:
+        print("There is no university apply records. Please insert apply record by press 7")
+        print()
+    finally:
+        connection.close()
+    print()
+
+
+def f11():
+    ### print universities expected to accept a student ###
+    connection = pymysql.connect(
+        host='ds4.snu.ac.kr',
+        user='ds3_27',
+        passwd='victory7&',
+        db='ds3_27_project',
+        charset='utf8',
+        cursorclass=pymysql.cursors.DictCursor)
+
+    s_id = int(input("Student ID: "))
+
+    try:
+        with connection.cursor() as cursor:
+            sql = ("SELECT a.u_id, a.u_name, a.capacity, a.u_group, a.cutline, a.weight "
+                   "FROM ( "
+                   "	SELECT *, @curRank := @curRank + 1 as rank "
+                   "	FROM university natural join apply "
+                   "					natural join student, "
+                   "		(SELECT @curRank := 0) r "
+                   "	WHERE "
+                   "		apply.s_id = %s and "
+                   "		cutline <= csat_score + (school_score * weight) "
+                   "	ORDER BY csat_score + (school_score * weight) desc ) a "
+                   "WHERE rank <= capacity ")
+            cursor.execute(sql, s_id)
+            # connection.commit()
+            result = cursor.fetchall()
+            df = pd.DataFrame(result)
+            print(df)
+            print()
+    except ValueError:
+        print("There is no student apply records. Please insert apply record by press 7")
+        print()
+    finally:
+        connection.close()
+    print()
