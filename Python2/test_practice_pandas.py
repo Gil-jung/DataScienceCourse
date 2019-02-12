@@ -35,7 +35,7 @@ df2_1 = df[df['score'].isnull()]
 print(df2_1)
 print()
 
-print("##### 2-2. Select the rows where number of attempts in the examination is less than 2 and score greater then 15 #####")
+print("##### 2-2. Select the rows where number of attempts in the examination is less than 2 and score greater than 15 #####")
 df2_2 = df[(df['attempts'] < 2) & (df['score'] > 15)]
 print(df2_2)
 print()
