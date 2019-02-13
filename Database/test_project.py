@@ -20,31 +20,38 @@ if __name__ == "__main__":
 
     option = 0
     while option != 12:
-        option = int(input("Select your action: "))
-        if option == 1:
-             f1()
-        elif option == 2:
-             f2()
-        elif option == 3:
-             f3()
-        elif option == 4:
-             f4()
-        elif option == 5:
-             f5()
-        elif option == 6:
-             f6()
-        elif option == 7:
-             f7()
-        elif option == 8:
-             f8()
-        elif option == 9:
-             f9()
-        elif option == 10:
-             f10()
-        elif option == 11:
-             f11()
-        elif option == 13:
-             f13()
-
+        try:
+            option = int(input("Select your action: "))
+            if option == 1:
+                f1()
+            elif option == 2:
+                f2()
+            elif option == 3:
+                f3()
+            elif option == 4:
+                f4()
+            elif option == 5:
+                f5()
+            elif option == 6:
+                f6()
+            elif option == 7:
+                f7()
+            elif option == 8:
+                f8()
+            elif option == 9:
+                f9()
+            elif option == 10:
+                f10()
+            elif option == 11:
+                f11()
+            elif option == 13:
+                confirm = input("Are you sure?(y/n) : ")
+                if  confirm == 'y' or confirm == 'Y':
+                    f13()
+        except ValueError:
+            print("You insert wrong type.")
+            print()
     print("Bye!")
+
+
 
