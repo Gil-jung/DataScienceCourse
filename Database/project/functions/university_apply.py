@@ -417,7 +417,7 @@ def f11():
             print()
 
     except ValueError:
-        print("There is no student apply records. Please insert apply record by press 7")
+        print("There is no pass apply records.")
         print()
 
     finally:
